@@ -6,7 +6,7 @@ device.
 stops typing at: control characters (including newline), chars not in table, EOF
 parameters:
 	device file (e.g. /dev/hidg0)
-	keyboard layout (1=en_us, 2=de_at, 3=de_at-nodeadkeys)
+	keyboard layout (1=en_us, 2=de_at, 3=de_at-nodeadkeys, 4=ja_jp)
 	unicode method: 1=gtk_holddown, 2=gtk_spaceend, 3=windows
 */
 #include <stdio.h>
