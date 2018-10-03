@@ -25,6 +25,7 @@ struct keysym {
 	struct layout en_us; //substructure for this layout
 	struct layout de_at;
 	struct layout de_nd;
+	struct layout ja_jp;
 	unsigned int unicode; //the unicode number to send via alt+numpad or ^U if char is not available in a keyboard layout
 };
 
@@ -32,7 +33,8 @@ enum kbdl {  //keyboard layouts:
         na_NA, //reserved
         en_US,
         de_AT,
-        de_ND //de_AT-nodeadkeys
+        de_ND, //de_AT-nodeadkeys
+        ja_JP  //JIS keyboard (OADG109A) half-width input
 };
 
 struct keysym* toscan (const char* utf8);//returns the layout struct of a keysym
