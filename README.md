@@ -9,6 +9,9 @@ sendHID is a tool to simulate typing using the Linux USB Gadget mode.
 
 Use a Raspberry Pi Zero (or A) to send keystrokes to a host computer. 
 
+# 日本語キーボード対応（半角入力のみ）
+The layouts support Japanese keyboard layout only half-width input mode, by @puztli.
+
 ## using the driver
 There are two drivers available: the legacy `g_hid` driver, which has windows support, and the new `libcomposite`, which makes emulation of multiple devices at the same time very easy. Setup instructions on the latter are below. 
 
@@ -43,7 +46,7 @@ mkdir -p functions/hid.$N
 echo 1 > functions/hid.usb0/protocol
 echo 1 > functions/hid.usb0/subclass
 echo 8 > functions/hid.usb0/report_length
-echo -ne \\x05\\x01\\x09\\x06\\xa1\\x01\\x05\\x07\\x19\\xe0\\x29\\xe7\\x15\\x00\\x25\\x01\\x75\\x01\\x95\\x08\\x81\\x02\\x95\\x01\\x75\\x08\\x81\\x03\\x95\\x05\\x75\\x01\\x05\\x08\\x19\\x01\\x29\\x05\\x91\\x02\\x95\\x01\\x75\\x03\\x91\\x03\\x95\\x06\\x75\\x08\\x15\\x00\\x25\\x65\\x05\\x07\\x19\\x00\\x29\\x65\\x81\\x00\\xc0 > functions/hid.usb0/report_desc
+echo -ne \\x05\\x01\\x09\\x06\\xa1\\x01\\x05\\x07\\x19\\xe0\\x29\\xe7\\x15\\x00\\x25\\x01\\x75\\x01\\x95\\x08\\x81\\x02\\x95\\x01\\x75\\x08\\x81\\x03\\x95\\x05\\x75\\x01\\x05\\x08\\x19\\x01\\x29\\x05\\x91\\x02\\x95\\x01\\x75\\x03\\x91\\x03\\x95\\x06\\x75\\x08\\x15\\x00\\x25\\x94\\x05\\x07\\x19\\x00\\x29\\x94\\x81\\x00\\xc0 > functions/hid.usb0/report_desc
 C=1
 mkdir -p configs/c.$C/strings/0x409
 echo "Config $C: ECM network" > configs/c.$C/strings/0x409/configuration 

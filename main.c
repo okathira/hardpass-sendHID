@@ -6,7 +6,7 @@ device.
 stops typing at: control characters (including newline), chars not in table, EOF
 parameters:
 	device file (e.g. /dev/hidg0)
-	keyboard layout (1=en_us, 2=de_at, 3=de_at-nodeadkeys)
+	keyboard layout (1=en_us, 2=de_at, 3=de_at-nodeadkeys, 4=ja_jp)
 	unicode method: 1=gtk_holddown, 2=gtk_spaceend, 3=windows
 */
 #include <stdio.h>
@@ -44,10 +44,11 @@ int main (int argc, char** argv) {
 		fprintf (stderr, "Usage: %s <device file> <layout> <unicode>\n", argv[P_EXE]);
 		fprintf (stderr, "Takes string to type from stdin\n");
 		fprintf (stderr, "<device file>:\ton the Raspberry Pi usually /dev/hidg0\n");
-		fprintf (stderr, "<layout>:\n\t%d\t%s\n\t%d\t%s\n\t%d\t%s\n", 
+		fprintf (stderr, "<layout>:\n\t%d\t%s\n\t%d\t%s\n\t%d\t%s\n\t%d\t%s\n", 
 			en_US, "en_US", 
 			de_AT, "de_AT (w/ dead keys)", 
-			de_ND, "de_AT-nodeadkeys");
+			de_ND, "de_AT-nodeadkeys",
+			ja_JP, "ja_JP half-width input");
 		fprintf (stderr, "<unicode>:\n\t%d\t%s\n\t%d\t%s\n\t%d\t%s\n\t%d\t%s\n", 
 			SKIP, "skip over unicode characters", 
 			GTK_HOLD, "X11 Holddown: CTRL+SHIFT+[u, hex]",
