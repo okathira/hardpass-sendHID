@@ -9,6 +9,9 @@ sendHID is a tool to simulate typing using the Linux USB Gadget mode.
 
 Use a Raspberry Pi Zero (or A) to send keystrokes to a host computer. 
 
+# 日本語キーボード対応（半角入力のみ）
+The layouts support Japanese keyboard layout only half-width input mode, by @puztli.
+
 ## using the driver
 There are two drivers available: the legacy `g_hid` driver, which has windows support, and the new `libcomposite`, which makes emulation of multiple devices at the same time very easy. Setup instructions on the latter are below. 
 
